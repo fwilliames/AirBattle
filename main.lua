@@ -1,13 +1,6 @@
 function love.load()
-    --Import Modules
-    Lume = require("libs.lume")
-    --Import the Game Classes
-    Player = require("Class.Player")
-    Enemy = require("Class.Enemy")
-    Bullet = require("Class.Bullet")
     GameData = require("Class.GameData")
     
-
     --Singleton
     MyGameData = GameData:new(TempRecord)
     _G.game = myGameData
