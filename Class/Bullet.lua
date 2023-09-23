@@ -23,6 +23,8 @@ function Bullet:update(dt)
     if self.y > love.graphics.getHeight() then
         --Restart the game
         TempRecord = Score
+        --Parando a musica de fundo
+        Sound:stop()
         love.load()
         
     end

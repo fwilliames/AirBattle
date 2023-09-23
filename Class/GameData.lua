@@ -10,6 +10,11 @@ local GameData = class("GameData") --- @class GameData
         Enemy = require("Class.Enemy")
         Bullet = require("Class.Bullet")
 
+        --Carregando Musica de Fundo
+        Sound = love.audio.newSource("Assets/combat.ogg","stream")
+        Sound:setLooping(true)
+        Sound:play()
+
         ListOfBullets = {}
         Score = 0
         TempRecord = 0
