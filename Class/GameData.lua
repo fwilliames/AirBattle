@@ -2,7 +2,7 @@ local class = require("libs.middleclass")
 
 local GameData = class("GameData") --- @class GameData
 
-    function GameData:initialize(record)
+    function GameData:initialize(newRecord)
         --Import Modules
         Lume = require("libs.lume")
         --Import the Game Classes
@@ -13,13 +13,23 @@ local GameData = class("GameData") --- @class GameData
         ListOfBullets = {}
         Score = 0
         TempRecord = 0
+        dataRecord = 0
+
+        if love.filesystem.getInfo("savedata.txt") then
+            file = love.filesystem.read("savedata.txt")
+            dataRecord = Lume.deserialize(file).record
+            
+        end
         
-        if record ~= nil then
-            if record > Record then
-                Record = record
+        if newRecord ~= nil then
+            if newRecord < dataRecord then
+                newRecord = dataRecord
+            end
+            if newRecord > Record then
+                Record = newRecord
             end
         else
-            Record = 0
+            Record = dataRecord
         end
 
         
@@ -42,6 +52,9 @@ local GameData = class("GameData") --- @class GameData
     function GameData:keyPressed(key)
         if key == "f1" then
             self:saveGame()
+        elseif key == "f2" then
+            love.filesystem.remove("savedata.txt")
+                love.event.quit("restart")
         end
     end
 
@@ -51,5 +64,4 @@ local GameData = class("GameData") --- @class GameData
         love.graphics.print({{100,0,0},"Record: " .. Record}, 75, 580)
         
     end
-
 return GameData

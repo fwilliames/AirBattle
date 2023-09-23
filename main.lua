@@ -9,7 +9,6 @@ end
 function love.keypressed(key)
     MyPlayer:keyPressed(key)
     GameData:keyPressed(key)
-  
 end
 
 function love.draw()
