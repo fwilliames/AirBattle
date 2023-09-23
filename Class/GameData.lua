@@ -45,4 +45,11 @@ local GameData = class("GameData") --- @class GameData
         end
     end
 
+    function GameData:print()
+        love.graphics.rectangle( "fill", 50, 550, 100, 100, 100, 100, 3 )
+        love.graphics.print({{100,0,0},"Score: " .. Score}, 75, 600)
+        love.graphics.print({{100,0,0},"Record: " .. Record}, 75, 580)
+        
+    end
+
 return GameData
