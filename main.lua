@@ -4,10 +4,6 @@ function love.load()
     --Singleton
     MyGameData = GameData:new(TempRecord)
     _G.game = myGameData
-
-    -- Create the Game Objects
-    MyPlayer = Player:new()
-    MyEnemy = Enemy:new()
 end
 
 function love.keypressed(key)

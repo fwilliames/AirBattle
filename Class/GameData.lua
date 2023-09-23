@@ -22,6 +22,11 @@ local GameData = class("GameData") --- @class GameData
             Record = 0
         end
 
+        
+    -- Create the Game Objects
+        MyPlayer = Player:new()
+        MyEnemy = Enemy:new()
+
     end
 
     function GameData:saveGame()
