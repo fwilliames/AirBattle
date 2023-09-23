@@ -74,6 +74,10 @@ local GameData = class("GameData") --- @class GameData
         love.graphics.rectangle( "fill", 50, 550, 100, 100, 100, 100, 3 )
         love.graphics.print({{100,0,0},"Score: " .. Score}, 75, 600)
         love.graphics.print({{100,0,0},"Record: " .. Record}, 75, 580)
+
+        love.graphics.rectangle( "fill", 350, 550, 300, 100)
+        love.graphics.print({{100,0,0},"Pressione F1 para salvar seu Record"}, 390, 580)
+        love.graphics.print({{100,0,0},"Pressione F2 para zerar seu Record"}, 390, 600)
         
     end
 return GameData
