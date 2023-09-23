@@ -1,4 +1,4 @@
-function love.load(record)
+function love.load()
     --Import Modules
     Lume = require("libs.lume")
     --Import the Game Classes
@@ -9,7 +9,7 @@ function love.load(record)
     
 
     --Singleton
-    MyGameData = GameData:new(tonumber(record))
+    MyGameData = GameData:new(Record)
     _G.game = myGameData
 
     -- Create the Game Objects
