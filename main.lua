@@ -8,10 +8,8 @@ end
 
 function love.keypressed(key)
     MyPlayer:keyPressed(key)
-
-    if key == "f1" then
-        GameData:saveGame()
-    end
+    GameData:keyPressed(key)
+  
 end
 
 function love.draw()

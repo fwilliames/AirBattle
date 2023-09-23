@@ -39,4 +39,10 @@ local GameData = class("GameData") --- @class GameData
         
     end
 
+    function GameData:keyPressed(key)
+        if key == "f1" then
+            self:saveGame()
+        end
+    end
+
 return GameData
