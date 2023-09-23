@@ -10,7 +10,7 @@ function Bullet:initialize(x,y)
     self.laser:play()
     self.x = x
     self.y = y
-    self.speed = 100
+    self.speed = 700
     --We'll need these for collision checking
     self.width = self.image:getWidth()
     self.height = self.image:getHeight()
@@ -22,7 +22,8 @@ function Bullet:update(dt)
 
     if self.y > love.graphics.getHeight() then
         --Restart the game
-        love.load()
+        love.load(Score)
+        
     end
 end
 
@@ -47,6 +48,7 @@ function Bullet:checkCollision(obj)
     and self_top < obj_bottom then
         self.dead = true
         self.explosion:play()
+        Score = Score + 1
 
         if obj.speed > 0 then
             obj.speed = obj.speed + 50
