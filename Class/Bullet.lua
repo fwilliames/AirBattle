@@ -22,7 +22,7 @@ function Bullet:update(dt)
 
     if self.y > love.graphics.getHeight() then
         --Restart the game
-        Record = Score
+        TempRecord = Score
         love.load()
         
     end
