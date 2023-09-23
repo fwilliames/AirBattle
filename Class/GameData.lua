@@ -17,6 +17,13 @@ local GameData = class("GameData") --- @class GameData
 
         if love.filesystem.getInfo("savedata.txt") then
             file = love.filesystem.read("savedata.txt")
+
+            --[[
+                Comentar a linha de cima e ativar essa quando for compactar para criar 
+                o executavel onde o airBattle eh o nome do arquivo zipado
+            ]]
+            
+            --file = love.filesystem.read("../airBattle/savedata.txt") 
             dataRecord = Lume.deserialize(file).record
             
         end
