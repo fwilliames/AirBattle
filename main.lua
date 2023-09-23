@@ -8,25 +8,13 @@ function love.load()
     -- Create the Game Objects
     MyPlayer = Player:new()
     MyEnemy = Enemy:new()
-
-    function saveGame()
-        data = {}
-        data.record = Record
-
-        serialized = Lume.serialize(data)
-    -- The filetype actually doesn't matter, and can even be omitted.
-        love.filesystem.write("savedata.txt", serialized)
-        
-    end
-
-    
 end
 
 function love.keypressed(key)
     MyPlayer:keyPressed(key)
 
     if key == "f1" then
-        saveGame()
+        GameData:saveGame()
     end
 end
 
