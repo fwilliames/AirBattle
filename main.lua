@@ -9,7 +9,7 @@ function love.load()
     
 
     --Singleton
-    MyGameData = GameData:new(Record)
+    MyGameData = GameData:new(TempRecord)
     _G.game = myGameData
 
     -- Create the Game Objects
